@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block title%}
+    Messages
+{% endblock %}
+
+{% block body%}
+    <div class="container">
+        <h1>All messages</h1>
+
+        {% if articles|length > 0 %}
+            {% for el in articles %}
+            <div class="alert-info mt-2 p-2 rounded">
+                <h2><b>Nickname:</b> {{ el.title }}</h2>
+                <p><b>Email:</b> {{ el.intro }}</p>
+                <p><b>Date: {{ el.date.date() }}</b></p>
+                <a href="/guest-book/{{ el.id }}" class="btn btn-outline-dark">See a message</a>
+            </div>
+            {% endfor %}
+        {% else %}
+            <p>We have no articles yet but you can write something</p>
+        {% endif %}
+        </div>
+{% endblock %}

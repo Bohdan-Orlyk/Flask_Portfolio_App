@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block title%}
+    Home
+{% endblock %}
+
+{% block body%}
+<div class="container d-flex justify-content-center">
+    <h1>Witaj w chmurze!</h1>
+</div>
+
+<div class="container d-flex justify-content-center">
+    <p>
+        Tutaj mozesz zobaczyć dwie galerii z kotkami w zakładce
+            <a href="{{ url_for('gallery') }}">Gallery</a>
+        i
+            <a href="{{ url_for('gallery_2') }}">Gallery 2</a>
+        i
+            <a href="{{ url_for('login') }}">napisać wiadomość</a>
+        a także zobaczyć
+            <a href="{{ url_for('guest_book') }}">wiadomości</a>
+        innych ludzi :)
+    </p>
+
+</div>
+{% endblock %}
